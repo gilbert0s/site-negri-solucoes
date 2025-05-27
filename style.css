@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+header {
+  background-color: #003366;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  margin-top: 10px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+nav ul li {
+  display: block; 
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  section {
+    padding: 15px;
+  }
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #99ccff;
+}
+
+
+#inicio {
+  background-color: #0077cc;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#inicio button {
+  padding: 10px 20px;
+  background-color: white;
+  color: #0077cc;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 119, 204, 0.3);
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+#inicio button:hover {
+  background-color: #e6f2ff;
+  box-shadow: 0 6px 10px rgba(0, 119, 204, 0.5);
+  transform: translateY(-3px);
+}
+
+
+section {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.05);
+}
+
+#servicos ul {
+  list-style: none;
+  padding: 0;
+}
+
+#servicos ul li {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #eef;
+  border-left: 4px solid #0077cc;
+}
+
+/* Formulário de Contato */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  transition: border-color 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #0077cc;
+  outline: none;
+}
+
+form button {
+  width: 100%;
+  max-width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+
+/* Estilo dos serviços */
+.servicos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.servico {
+  background-color: #e6f2ff;
+  padding: 20px;
+  border-left: 5px solid #0077cc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.servico h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.servico p {
+  font-size: 0.95rem;
+  color: #333;
+}
