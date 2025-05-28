@@ -5,206 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Negri Soluções</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    /* Reset básico */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Poppins', Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-      padding: 0 20px;
-    }
-    header {
-      background-color: #003366;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-radius: 0 0 10px 10px;
-    }
-    header h1 {
-      color: white;
-      font-weight: 600;
-      font-size: 1.5rem;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: #99ccff;
-    }
-
-    /* Hero */
-    .hero {
-      background-color: #0077cc;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 60px 40px;
-      border-radius: 10px;
-      gap: 30px;
-      margin-top: 30px;
-    }
-    .hero-text {
-      flex: 1;
-    }
-    .hero-text h2 {
-      font-size: 2.4rem;
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
-    .hero-text button {
-      padding: 12px 24px;
-      background-color: white;
-      color: #0077cc;
-      border: none;
-      border-radius: 5px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(255,255,255,0.3);
-      transition: background-color 0.3s, transform 0.2s;
-    }
-    .hero-text button:hover {
-      background-color: #e6f2ff;
-      transform: translateY(-3px);
-    }
-    .hero-image {
-      flex: 1;
-      text-align: right;
-    }
-    .hero-image img {
-      max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-    }
-
-    /* Serviços */
-    .servicos-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-      margin-bottom: 40px;
-    }
-    .servico {
-      background-color: #e6f2ff;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .servico:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    }
-    .servico-icon {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 15px;
-    }
-    .servico h3 {
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-    .servico p {
-      color: #333;
-      font-size: 1rem;
-    }
-
-    /* Formulário */
-    form {
-      max-width: 600px;
-      margin: 0 auto 60px;
-      background: white;
-      padding: 30px 40px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    form label {
-      font-weight: 600;
-      display: block;
-      margin-bottom: 8px;
-      margin-top: 20px;
-    }
-    form input,
-    form textarea {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-      margin-top: 5px;
-      transition: border-color 0.3s;
-      resize: vertical;
-    }
-    form input:focus,
-    form textarea:focus {
-      border-color: #0077cc;
-      outline: none;
-    }
-    form button {
-      background-color: #0077cc;
-      color: white;
-      border: none;
-      padding: 14px 24px;
-      font-size: 1.1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 25px;
-      width: 100%;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-    form button:hover {
-      background-color: #005fa3;
-      transform: translateY(-3px);
-    }
-
-    /* Rodapé */
-    footer {
-      background-color: #003366;
-      color: white;
-      padding: 20px 40px;
-      text-align: center;
-      font-size: 0.9rem;
-      border-radius: 0 0 10px 10px;
-    }
-
-    /* Responsividade */
-    @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-      .hero-image {
-        margin-top: 20px;
-        text-align: center;
-      }
-      nav ul {
-        flex-direction: column;
-        gap: 15px;
-      }
-      header {
-        flex-direction: column;
-        gap: 15px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -221,8 +22,10 @@
 
 <section id="inicio" class="hero">
   <div class="hero-text">
-    <h2>Solucione seus problemas com energia solar e manutenção elétrica</h2>
-    <button>Solicitar Orçamento</button>
+    <h2>Transformando energia e soluções elétricas em economia para você</h2>
+    <a href="https://wa.me/5535999326158?text=Olá!%20Tenho%20interesse%20em%20um%20orçamento." target="_blank">
+  <button>Falar no WhatsApp</button>
+</a>
   </div>
   <div class="hero-image">
     <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Energia Solar" />
@@ -261,7 +64,12 @@
 </section>
 
 <footer>
-  &copy; 2025 Negri Soluções - Todos os direitos reservados
+  <p>&copy; 2025 Negri Soluções - Todos os direitos reservados</p>
+  <p>📞 (11) 99999-8888 | 📧 contato@negrisolucoes.com</p>
+  <p>
+    <a href="https://wa.me/55SEUNUMERO" target="_blank" style="color: #99ccff; text-decoration: none;">WhatsApp</a> |
+    <a href="mailto:contato@negrisolucoes.com" style="color: #99ccff; text-decoration: none;">E-mail</a>
+  </p>
 </footer>
 
 </body>
