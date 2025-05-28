@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Negri Soluções</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,29 +24,39 @@
   <div class="hero-text">
     <h2>Transformando energia e soluções elétricas em economia para você</h2>
     <a href="https://wa.me/5535999326158?text=Olá!%20Tenho%20interesse%20em%20um%20orçamento." target="_blank">
-  <button>Falar no WhatsApp</button>
-</a>
+      <button>Falar no WhatsApp</button>
+    </a>
   </div>
   <div class="hero-image">
-    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Energia Solar" />
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Paisagem de Energia Limpa" />
   </div>
 </section>
 
 <section id="servicos" class="servicos-container">
   <div class="servico">
-    <img src="https://cdn-icons-png.flaticon.com/512/1063/1063544.png" alt="Manutenção" class="servico-icon" />
+    <img src="https://cdn-icons-png.flaticon.com/512/3540/3540136.png" alt="Manutenção Elétrica" class="servico-icon" />
     <h3>Manutenção Elétrica</h3>
-    <p>Serviço profissional para instalações e manutenção elétrica residencial e comercial.</p>
+    <p>Serviços profissionais para instalações e manutenções elétricas residenciais e comerciais.</p>
   </div>
   <div class="servico">
-    <img src="https://cdn-icons-png.flaticon.com/512/869/869636.png" alt="Energia Solar" class="servico-icon" />
+    <img src="https://cdn-icons-png.flaticon.com/512/3540/3540105.png" alt="Instalação Residencial" class="servico-icon" />
+    <h3>Instalação Residencial</h3>
+    <p>Instalações elétricas completas para novas construções, reformas e adequações.</p>
+  </div>
+  <div class="servico">
+    <img src="https://cdn-icons-png.flaticon.com/512/10484/10484158.png" alt="Energia Solar" class="servico-icon" />
     <h3>Energia Solar</h3>
-    <p>Projetos de energia solar para redução de custos e sustentabilidade.</p>
+    <p>Projetos e instalação de sistemas fotovoltaicos para economia e sustentabilidade.</p>
   </div>
   <div class="servico">
-    <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="Consultoria" class="servico-icon" />
+    <img src="https://cdn-icons-png.flaticon.com/512/5956/5956592.png" alt="Projetos Elétricos" class="servico-icon" />
+    <h3>Projetos Elétricos</h3>
+    <p>Desenvolvimento de projetos elétricos personalizados, seguindo as normas técnicas vigentes.</p>
+  </div>
+  <div class="servico">
+    <img src="https://cdn-icons-png.flaticon.com/512/1651/1651654.png" alt="Consultoria Técnica" class="servico-icon" />
     <h3>Consultoria Técnica</h3>
-    <p>Assessoria especializada para garantir a melhor solução para seu projeto.</p>
+    <p>Assessoria especializada para otimizar seu projeto elétrico e de energia.</p>
   </div>
 </section>
 
@@ -54,21 +64,31 @@
   <form>
     <h2>Contato</h2>
     <label for="nome">Nome:</label>
-    <input type="text" id="nome" placeholder="Seu nome" />
+    <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
+
+    <label for="telefone">Telefone:</label>
+    <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" />
+
     <label for="email">Email:</label>
-    <input type="email" id="email" placeholder="Seu email" />
+    <input type="email" id="email" name="email" placeholder="Seu email" required />
+
     <label for="mensagem">Mensagem:</label>
-    <textarea id="mensagem" rows="5" placeholder="Escreva sua mensagem"></textarea>
-    <button type="submit">Enviar</button>
+    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem" required></textarea>
+
+    <button type="submit">Enviar Mensagem</button>
   </form>
 </section>
 
 <footer>
   <p>&copy; 2025 Negri Soluções - Todos os direitos reservados</p>
-  <p>📞 (11) 99999-8888 | 📧 contato@negrisolucoes.com</p>
   <p>
-    <a href="https://wa.me/55SEUNUMERO" target="_blank" style="color: #99ccff; text-decoration: none;">WhatsApp</a> |
-    <a href="mailto:contato@negrisolucoes.com" style="color: #99ccff; text-decoration: none;">E-mail</a>
+    <a href="tel:+5535999326158" style="color: #f3f4f6; text-decoration: none;">📞 Telefone: (35) 99932-6158</a>
+  </p>
+  <p>
+    <a href="mailto:contato@negrisolucoes.com.br" style="color: #f3f4f6; text-decoration: none;">📧 E-mail: contato@negrisolucoes.com.br</a>
+  </p>
+  <p>
+    <a href="https://wa.me/5535999326158?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços." target="_blank" style="color: #99ccff; text-decoration: none; font-weight: bold;">Fale Conosco pelo WhatsApp</a>
   </p>
 </footer>
 
