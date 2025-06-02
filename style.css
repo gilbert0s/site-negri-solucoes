@@ -261,6 +261,119 @@ footer p {
   margin-bottom: 10px;
 }
 
+#inicio.hero {
+  min-height: 70vh; /* Ou defina uma altura fixa, ex: 550px, 600px */
+  /* max-height: 650px; /* Opcional: Limitar a altura máxima do banner */
+  padding: 0; /* Removemos o padding anterior pois o carrossel ocupará todo o espaço */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Essencial para o posicionamento absoluto dos elementos internos */
+  overflow: hidden; /* Garante que nada do carrossel "vaze" para fora */
+  background-color: #1f2937; /* Cor de fundo caso as imagens demorem ou falhem ao carregar */
+}
+
+.carousel-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Fica atrás do texto e dos indicadores */
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Todos os slides começam invisíveis */
+  transition: opacity 0.8s ease-in-out; /* Efeito de transição suave (fade) */
+  visibility: hidden;
+}
+
+.carousel-slide.active-slide {
+  opacity: 1; /* O slide ativo fica visível */
+  visibility: visible;
+  z-index: 2; /* Garante que o slide ativo fique por cima dos outros */
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz a imagem cobrir todo o espaço do slide, pode cortar partes da imagem se a proporção for diferente */
+  object-position: center; /* Centraliza a imagem dentro do corte */
+}
+
+.hero-text-overlay {
+  position: relative; /* Mantém no fluxo normal, mas com z-index alto */
+  z-index: 10; /* Garante que o texto fique sobre o carrossel */
+  text-align: center;
+  color: #ffffff;
+  padding: 30px 40px; /* Espaçamento interno para o texto */
+  max-width: 750px; /* Limita a largura do bloco de texto */
+  background-color: rgba(0, 0, 0, 0.4); /* Opcional: Fundo translúcido escuro para melhor legibilidade do texto */
+  border-radius: 8px; /* Opcional: se usar o fundo translúcido */
+}
+
+.hero-text-overlay h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem; /* Ajuste conforme necessário */
+  font-weight: 600; /* Ajustado para um pouco mais de peso */
+  line-height: 1.4;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6); /* Sombra no texto para legibilidade */
+}
+
+.hero-text-overlay button {
+  background-color: #f39c12; /* Voltando para o laranja/âmbar de destaque, ou mantenha o azul #3b82f6 se preferir */
+  color: #ffffff;
+  border: none;
+  padding: 15px 32px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+}
+
+.hero-text-overlay button:hover,
+.hero-text-overlay button:focus {
+  background-color: #e67e22; /* Laranja mais escuro no hover */
+  transform: translateY(-1px);
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 20px; /* Distância das bolinhas da parte inferior */
+  left: 50%;
+  transform: translateX(-50%); /* Centraliza as bolinhas horizontalmente */
+  z-index: 15; /* Garante que as bolinhas fiquem sobre tudo */
+  display: flex;
+  gap: 10px; /* Espaço entre as bolinhas */
+}
+
+.indicator-dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.4); /* Cor da bolinha inativa */
+  border: 1px solid rgba(255, 255, 255, 0.6); /* Borda sutil */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.indicator-dot.active-dot {
+  background-color: #ffffff; /* Cor da bolinha ativa */
+}
+
+
 /* Responsividade */
 @media (max-width: 600px) {
   body {
