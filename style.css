@@ -23,21 +23,21 @@ header {
   box-shadow: 0 2px 10px rgba(0,0,0,0.15);
 }
 
-.logo-area { 
+.logo-area {
   display: flex;
   align-items: center;
   text-decoration: none;
 }
 
 .header-logo-symbol {
-  height: 70px;
+  height: 70px; /*tamanho da logo*/
   margin-right: 8px;
   display: block;
 }
 
 .header-site-name {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.7rem; /*tamanho da letra do Negri Soluções*/
   font-weight: 600;
   color: #e1e5e6;
   line-height: 1;
@@ -63,41 +63,80 @@ nav ul li a:hover {
 
 /* Seção Hero */
 #inicio.hero {
-  background-color: #1f2937;
-  color: #f3f4f6;
-  padding: 120px 80px;
-  min-height: 70vh;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  background-color: #1f2937; /* Fundo da faixa do carrossel */
+}
+
+.carousel-container {
+  width: 100%;
+  max-width: 1500px; /* Limite máximo de largura para o carrossel */
+  margin-left: auto;
+  margin-right: auto;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  visibility: hidden;
+}
+
+.carousel-slide.active-slide {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain ;
+  object-position: center;
+  display: block;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 60px;
+  gap: 10px;
 }
 
-.hero .hero-text {
-  flex: 1 1 48%;
-  max-width: 650px;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.indicator-dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.hero .hero-text h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.6rem;
-  font-weight: 500;
-  line-height: 1.45;
-  margin-bottom: 40px;
-  color: #ffffff;
+.indicator-dot.active-dot {
+  background-color: #ffffff;
 }
 
-.hero .hero-text a {
-  text-decoration: none;
+.hero-button-container {
+  text-align: center;
+  padding: 30px 20px; /* Espaçamento acima e abaixo do botão */
+  background-color: #f4f8fb;
 }
 
-.hero .hero-text button {
-  background-color: #3b82f6;
+.hero-button-container button {
+  background-color: #f39c12;
   color: #ffffff;
   border: none;
   padding: 15px 32px;
@@ -112,26 +151,10 @@ nav ul li a:hover {
   box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
 }
 
-.hero .hero-text button:hover,
-.hero .hero-text button:focus {
-  background-color: #2563eb;
+.hero-button-container button:hover,
+.hero-button-container button:focus {
+  background-color: #e67e22;
   transform: translateY(-1px);
-}
-
-.hero .hero-image {
-  flex: 1 1 48%;
-  max-width: 550px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero .hero-image img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
 /* Serviços */
@@ -261,118 +284,25 @@ footer p {
   margin-bottom: 10px;
 }
 
-#inicio.hero {
-  min-height: 70vh; /* Ou defina uma altura fixa, ex: 550px, 600px */
-  /* max-height: 650px; /* Opcional: Limitar a altura máxima do banner */
-  padding: 0; /* Removemos o padding anterior pois o carrossel ocupará todo o espaço */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative; /* Essencial para o posicionamento absoluto dos elementos internos */
-  overflow: hidden; /* Garante que nada do carrossel "vaze" para fora */
-  background-color: #1f2937; /* Cor de fundo caso as imagens demorem ou falhem ao carregar */
+footer p a {
+  color: #f3f4f6;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
-.carousel-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1; /* Fica atrás do texto e dos indicadores */
+footer p a:hover {
+  color: #99ccff;
+  text-decoration: underline;
 }
 
-.carousel-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0; /* Todos os slides começam invisíveis */
-  transition: opacity 0.8s ease-in-out; /* Efeito de transição suave (fade) */
-  visibility: hidden;
+footer p a.footer-whatsapp-link {
+  color: #99ccff;
+  font-weight: bold;
 }
 
-.carousel-slide.active-slide {
-  opacity: 1; /* O slide ativo fica visível */
-  visibility: visible;
-  z-index: 2; /* Garante que o slide ativo fique por cima dos outros */
-}
-
-.carousel-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Faz a imagem cobrir todo o espaço do slide, pode cortar partes da imagem se a proporção for diferente */
-  object-position: center; /* Centraliza a imagem dentro do corte */
-}
-
-.hero-text-overlay {
-  position: relative; /* Mantém no fluxo normal, mas com z-index alto */
-  z-index: 10; /* Garante que o texto fique sobre o carrossel */
-  text-align: center;
+footer p a.footer-whatsapp-link:hover {
   color: #ffffff;
-  padding: 30px 40px; /* Espaçamento interno para o texto */
-  max-width: 750px; /* Limita a largura do bloco de texto */
-  background-color: rgba(0, 0, 0, 0.4); /* Opcional: Fundo translúcido escuro para melhor legibilidade do texto */
-  border-radius: 8px; /* Opcional: se usar o fundo translúcido */
 }
-
-.hero-text-overlay h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.5rem; /* Ajuste conforme necessário */
-  font-weight: 600; /* Ajustado para um pouco mais de peso */
-  line-height: 1.4;
-  margin-bottom: 30px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.6); /* Sombra no texto para legibilidade */
-}
-
-.hero-text-overlay button {
-  background-color: #f39c12; /* Voltando para o laranja/âmbar de destaque, ou mantenha o azul #3b82f6 se preferir */
-  color: #ffffff;
-  border: none;
-  padding: 15px 32px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: 8px;
-  text-transform: none;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
-}
-
-.hero-text-overlay button:hover,
-.hero-text-overlay button:focus {
-  background-color: #e67e22; /* Laranja mais escuro no hover */
-  transform: translateY(-1px);
-}
-
-.carousel-indicators {
-  position: absolute;
-  bottom: 20px; /* Distância das bolinhas da parte inferior */
-  left: 50%;
-  transform: translateX(-50%); /* Centraliza as bolinhas horizontalmente */
-  z-index: 15; /* Garante que as bolinhas fiquem sobre tudo */
-  display: flex;
-  gap: 10px; /* Espaço entre as bolinhas */
-}
-
-.indicator-dot {
-  width: 12px;
-  height: 12px;
-  background-color: rgba(255, 255, 255, 0.4); /* Cor da bolinha inativa */
-  border: 1px solid rgba(255, 255, 255, 0.6); /* Borda sutil */
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.indicator-dot.active-dot {
-  background-color: #ffffff; /* Cor da bolinha ativa */
-}
-
 
 /* Responsividade */
 @media (max-width: 600px) {
@@ -387,6 +317,13 @@ footer p {
     padding: 20px;
   }
 
+  .header-logo-symbol {
+    height: 40px;
+  }
+  .header-site-name {
+    font-size: 1.4rem;
+  }
+
   nav ul {
     flex-direction: column;
     gap: 15px;
@@ -394,28 +331,31 @@ footer p {
   }
 
   #inicio.hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 60px 20px;
-    gap: 30px;
+    padding: 0;
   }
 
-  .hero .hero-text {
-    text-align: center;
-    align-items: center;
-    flex-basis: auto;
+  .carousel-container {
+    margin-bottom: 20px;
     max-width: 100%;
+    border-radius: 0;
   }
 
-  .hero .hero-text h2 {
-    font-size: 2rem;
+  .carousel-indicators {
+    bottom: 10px;
   }
 
-  .hero .hero-image {
-    flex-basis: auto;
-    width: 90%;
-    max-width: 400px;
-    margin-top: 0;
+  .indicator-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .hero-button-container {
+    padding: 25px 20px;
+  }
+
+  .hero-button-container button {
+    padding: 12px 25px;
+    font-size: 0.9rem;
   }
 
   #contato {
@@ -434,5 +374,10 @@ footer p {
   footer {
     padding: 20px;
     font-size: 0.9rem;
+  }
+
+  footer p a {
+    display: inline-block;
+    margin: 5px 0;
   }
 }
