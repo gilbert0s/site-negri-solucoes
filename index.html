@@ -107,5 +107,38 @@
   </p>
 </footer>
 
+<script>
+  // Seleciona todos os slides e todos os pontos indicadores
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots = document.querySelectorAll('.indicator-dot');
+  let currentSlide = 0; // Começa com o primeiro slide (índice 0)
+
+  // Função para mostrar um slide específico e atualizar o ponto ativo
+  function showSlide(slideIndex) {
+    // Esconde todos os slides e remove a classe ativa dos pontos
+    slides.forEach(slide => slide.classList.remove('active-slide'));
+    dots.forEach(dot => dot.classList.remove('active-dot'));
+
+    // Mostra o slide desejado e ativa o ponto correspondente
+    slides[slideIndex].classList.add('active-slide');
+    dots[slideIndex].classList.add('active-dot');
+    currentSlide = slideIndex; // Atualiza o índice do slide atual
+  }
+
+  // Adiciona um "ouvinte de evento" de clique para cada ponto indicador
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      // Pega o índice do slide a partir do atributo 'data-slide' do ponto clicado
+      const slideIndex = parseInt(dot.getAttribute('data-slide'));
+      showSlide(slideIndex);
+    });
+  });
+
+  // Garante que o primeiro slide e ponto estejam ativos ao carregar a página
+  // (O CSS já faz o primeiro slide ser ativo, mas isso reforça para o JS)
+  showSlide(currentSlide);
+
+</script>
+
 </body>
 </html>
