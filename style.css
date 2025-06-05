@@ -90,11 +90,11 @@ nav ul li a:hover {
     object-position: center;
 }
 
-/* Estilizando os indicadores (bolinhas) do Bootstrap */
+/* Estilizando os indicadores (traços) do Bootstrap */
 #meuCarrosselHero .carousel-indicators button {
-    width: 12px;
-    height: 12px;
-    border-radius: 100%;
+    width: 50px;
+    height: 5px;
+    border-radius: 0%;
     margin-left: 5px;
     margin-right: 5px;
     background-color: rgba(255, 255, 255, 0.5);
