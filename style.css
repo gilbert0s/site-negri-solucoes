@@ -507,3 +507,26 @@ footer p a.footer-whatsapp-link:hover {
         padding: 40px 15px;
     }
 }
+
+.login-area {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.btn-login {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
